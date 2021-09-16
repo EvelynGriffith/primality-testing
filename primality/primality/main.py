@@ -13,9 +13,11 @@ import typer
 
 from rich.console import Console
 
-# TODO: create a Typer object to support the command-line interface
+# create a Typer object to support the command-line interface
+cli = typer.Typer()
 
-# TODO: create a Profiler object to support timing program code segments
+# create a Profiler object to support timing program code segments
+profiler = Profiler() 
 
 
 class PrimalityTestingApproach(str, Enum):
@@ -27,9 +29,14 @@ class PrimalityTestingApproach(str, Enum):
 
 def human_readable_boolean(answer: bool) -> str:
     """Produce a human-readable Yes or No for a boolean value of True or False."""
-    # TODO: produce a human-readable value for a bool
+    # produce a human-readable value for a bool
     # True --> "Yes"
     # False --> "No"
+    if answer = False:
+        print("No")
+    else:
+        answer = True:
+        print("Yes")
     # This return value is a placeholder
     return "Yes"
 
@@ -43,29 +50,48 @@ def pretty_print_list(values: Iterable[int]) -> str:
 
 def primality_test_exhaustive(x: int) -> Tuple[bool, List[int]]:
     """Perform an exhaustive primality test on the provided integer."""
-    # TODO: declare the smallest_divisor with default of None
-    # TODO: exhaustively search through all of the values, starting at 2
+    # declare the smallest_divisor with default of None
+    sm_div = None
+    # exhaustively search through all of the values, starting at 2
     # --> if the number is evenly divisible, then it is not prime
-    # TODO: if smallest_divisor is no longer None then the function has
+    for guess in range(2, x):
+        if x%guess == 0:
+            sm_div = guess
+            break
+    if sm_div != None:
+        return (False, [sm_div])
+    else:
+        return (True, [1,x])
+    # if smallest_divisor is no longer None then the function has
     # found a non-prime number with a specific smallest_divisor
-    # TODO: if the smallest_divisor is still None then the function has
+    # if the smallest_divisor is still None then the function has
     # found a prime number and it should return both itself and 1
-    # TODO: make sure that the function returns:
+    # make sure that the function returns:
     # --> a bool for whether or not the number was prime
     # --> a List[int] for the list with the smallest divisor for the number
     # --> if the number is prime, return the List[int] with both the number and 1
     # This return value is a placeholder
-    return (False, [0,1])
 
 
 def primality_test_efficient(x: int) -> Tuple[bool, List[int]]:
     """Perform an efficient primality test on the provided integer."""
     smallest_divisor = None
-    # TODO: determine first if the number is even and then confirm
+    # determine first if the number is even and then confirm
     # that it does have a smallest_divisor of 2
-    # TODO: if the number is not even, then iteratively perform primality test
-    # TODO: use a range function that skips over the even values
-    # TODO: make sure that the function returns:
+    if x % 2 == 0:
+        smallest_divisor = 2
+    else:
+        for guess in range(3, x, 2):
+            if x % guess == 0:
+                smallest_divisor = guess
+                break
+    if smallest_divisor != None:
+        return(False, [smallest_divisor])
+    else:
+        return(True, [1, x])
+    # if the number is not even, then iteratively perform primality test
+    # use a range function that skips over the even values
+    # make sure that the function returns:
     # --> a bool for whether or not the number was prime
     # --> a List[int] for the list with the smallest divisor for the number
     # --> if the number is prime, return the List[int] with both the number and 1
@@ -87,14 +113,22 @@ def primality(
     if approach.value == PrimalityTestingApproach.efficient:
         # Reference for more details:
         # https://github.com/joerick/pyinstrument
-        # TODO: perform profiling on the execution of the primality test
-        # TODO: do not perform profiling
+        # perform profiling on the execution of the primality test
+        profiler.start()
+        primality_test_efficient(number)
+        # do not perform profiling
+        profiler.stop()
+        profiler.print()
     # TODO: use the exhaustive primality testing algorithm
     elif approach.value == PrimalityTestingApproach.exhaustive:
         # Reference for more details:
         # https://github.com/joerick/pyinstrument
-        # TODO: perform profiling on the execution of the primality test
-        # TODO: do not perform profiling
+        profiler.start()
+        primality_test_exhaustive(number)
+        # perform profiling on the execution of the primality test
+        # do not perform profiling
+        profiler.stop()
+        profiler.print()
     # display the results of the primality test
     was_prime_found = primality_tuple[0]
     divisor_list = primality_tuple[1]
