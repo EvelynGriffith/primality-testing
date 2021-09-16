@@ -32,7 +32,7 @@ def human_readable_boolean(answer: bool) -> str:
     # produce a human-readable value for a bool
     # True --> "Yes"
     # False --> "No"
-    if answer = False:
+    if answer != True:
         return "No"
     else:
         return "Yes"
@@ -42,11 +42,14 @@ def human_readable_boolean(answer: bool) -> str:
 def pretty_print_list(values: Iterable[int]) -> str:
     """Pretty print a list without brackets and adding commas."""
     # create and return a version of the list without brackets
-    list = ""
-    for x in values:
+    ls = ""
+    for x in range(len(values)):
+        if x ==len(values) -1:
+            ls += f"{values[x]}"
+        else:
+            ls += f"{values[x]},"
         # and with commas in between all of the values
-        list.append(str(x) + ",")
-    return list
+    return ls
 
 
 
@@ -59,6 +62,7 @@ def primality_test_exhaustive(x: int) -> Tuple[bool, List[int]]:
     for guess in range(2, x):
         if x%guess == 0:
             sm_div = guess
+            return (False, [0,1])
             break
     if sm_div != None:
         return (False, [sm_div])
@@ -111,26 +115,24 @@ def primality(
     console = Console()
     # create an empty primality_tuple
     primality_tuple: Tuple[bool, List[int]]
-    # TODO: use the efficient primality testing algorithm
+    # use the efficient primality testing algorithm
     if approach.value == PrimalityTestingApproach.efficient:
         # Reference for more details:
         # https://github.com/joerick/pyinstrument
         # perform profiling on the execution of the primality test
         profiler.start()
-        primality_test_efficient(number)
+        primality_tuple = primality_test_efficient(number)
         # do not perform profiling
         profiler.stop()
-        profiler.print()
-    # TODO: use the exhaustive primality testing algorithm
+    # use the exhaustive primality testing algorithm
     elif approach.value == PrimalityTestingApproach.exhaustive:
         # Reference for more details:
         # https://github.com/joerick/pyinstrument
         profiler.start()
-        primality_test_exhaustive(number)
+        primality_tuple = primality_test_exhaustive(number)
         # perform profiling on the execution of the primality test
         # do not perform profiling
         profiler.stop()
-        profiler.print()
     # display the results of the primality test
     was_prime_found = primality_tuple[0]
     divisor_list = primality_tuple[1]
