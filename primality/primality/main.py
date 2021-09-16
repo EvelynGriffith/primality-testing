@@ -33,20 +33,22 @@ def human_readable_boolean(answer: bool) -> str:
     # True --> "Yes"
     # False --> "No"
     if answer = False:
-        print("No")
+        return "No"
     else:
-        answer = True:
-        print("Yes")
-    # This return value is a placeholder
-    return "Yes"
+        return "Yes"
+
 
 
 def pretty_print_list(values: Iterable[int]) -> str:
     """Pretty print a list without brackets and adding commas."""
-    # TODO: create and return a version of the list without brackets
-    # and with commas in between all of the values
-    # This return value is a placeholder
-    return ""
+    # create and return a version of the list without brackets
+    list = ""
+    for x in values:
+        # and with commas in between all of the values
+        list.append(str(x) + ",")
+    return list
+
+
 
 def primality_test_exhaustive(x: int) -> Tuple[bool, List[int]]:
     """Perform an exhaustive primality test on the provided integer."""
