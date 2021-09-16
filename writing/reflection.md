@@ -1,19 +1,60 @@
 # Primality Testing
 
-## Add Your Name Here
+## Evelyn Griffith
 
 ## Program Output
 
 ### Use six fenced code blocks to provide output from different runs of `primality` with different inputs
 
-TODO: Pick three different input values and run then each with
-(a) the exhaustive algorithm
-and
-(b) the efficient algorithm
+`poetry run primality --number 49979687 --approach efficient`
 
-TODO: Overall, provide a total of six commands and six fenced code blocks
-TODO: Three outputs should be from the efficient algorithm and three should be with the exhaustive algorithm
-TODO: Run the exhaustive and efficient algorithm with the same inputs
+```
+😄 Attempting to determine if 49979687 is a prime number!
+
+✨ What divisors were found? 1,49979687
+✨ Was this a prime number? Yes
+```
+
+`poetry run primality --number 49979687 --approach exhaustive`
+
+```
+😄 Attempting to determine if 49979687 is a prime number!
+
+✨ What divisors were found? 1,49979687
+✨ Was this a prime number? Yes
+```
+`poetry run primality --number 12345678 --approach efficient`
+
+```
+😄 Attempting to determine if 12345678 is a prime number!
+
+✨ What divisors were found? 2
+✨ Was this a prime number? No
+```
+
+`poetry run primality --number 12345678 --approach exhaustive`
+```
+😄 Attempting to determine if 12345678 is a prime number!
+
+✨ What divisors were found? 0,1
+✨ Was this a prime number? No
+```
+
+`poetry run primality --number 103553 --approach efficient`
+```
+😄 Attempting to determine if 103553 is a prime number!
+
+✨ What divisors were found? 1,103553
+✨ Was this a prime number? Yes
+```
+
+`poetry run primality --number 103553 --approach exhaustive`
+```
+😄 Attempting to determine if 103553 is a prime number!
+
+✨ What divisors were found? 1,103553
+✨ Was this a prime number? Yes
+```
 
 #### Three outputs from running the exhaustive algorithm
 
