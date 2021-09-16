@@ -6,13 +6,22 @@
 
 ### Use six fenced code blocks to provide output from different runs of `primality` with different inputs
 
-`poetry run primality --number 49979687 --approach efficient`
+#### Three outputs from running the exhaustive algorithm
 
+`poetry run primality --number 103553 --approach exhaustive`
 ```
-😄 Attempting to determine if 49979687 is a prime number!
+😄 Attempting to determine if 103553 is a prime number!
 
-✨ What divisors were found? 1,49979687
+✨ What divisors were found? 1,103553
 ✨ Was this a prime number? Yes
+```
+
+`poetry run primality --number 12345678 --approach exhaustive`
+```
+😄 Attempting to determine if 12345678 is a prime number!
+
+✨ What divisors were found? 0,1
+✨ Was this a prime number? No
 ```
 
 `poetry run primality --number 49979687 --approach exhaustive`
@@ -23,20 +32,24 @@
 ✨ What divisors were found? 1,49979687
 ✨ Was this a prime number? Yes
 ```
+
+#### Three outputs from running the efficient algorithm
+
+`poetry run primality --number 49979687 --approach efficient`
+
+```
+😄 Attempting to determine if 49979687 is a prime number!
+
+✨ What divisors were found? 1,49979687
+✨ Was this a prime number? Yes
+```
+
 `poetry run primality --number 12345678 --approach efficient`
 
 ```
 😄 Attempting to determine if 12345678 is a prime number!
 
 ✨ What divisors were found? 2
-✨ Was this a prime number? No
-```
-
-`poetry run primality --number 12345678 --approach exhaustive`
-```
-😄 Attempting to determine if 12345678 is a prime number!
-
-✨ What divisors were found? 0,1
 ✨ Was this a prime number? No
 ```
 
@@ -48,41 +61,9 @@
 ✨ Was this a prime number? Yes
 ```
 
-`poetry run primality --number 103553 --approach exhaustive`
-```
-😄 Attempting to determine if 103553 is a prime number!
-
-✨ What divisors were found? 1,103553
-✨ Was this a prime number? Yes
-```
-
-#### Three outputs from running the exhaustive algorithm
-
-TODO: Provide the specific command that you ran to produce this output
-TODO: Use a fenced code block to provide the output for this command.
-
-TODO: Provide the specific command that you ran to produce this output
-TODO: Use a fenced code block to provide the output for this command.
-
-TODO: Provide the specific command that you ran to produce this output
-TODO: Use a fenced code block to provide the output for this command.
-
-#### Three outputs from running the efficient algorithm
-
-TODO: Provide the specific command that you ran to produce this output
-TODO: Use a fenced code block to provide the output for this command.
-
-TODO: Provide the specific command that you ran to produce this output
-TODO: Use a fenced code block to provide the output for this command.
-
-TODO: Provide the specific command that you ran to produce this output
-TODO: Use a fenced code block to provide the output for this command.
-
 ## Performance Analysis
 
-TODO: Provide one paragraph that states which algorithm is fastest, by how much
-it is faster, and how you knew that the it was faster, referencing the data in
-the aforementioned command outputs to support your response.
+The efficiency algorithm is faster by 41% in the example for number 49979687. It is faster by 6% in the second example, and 9% in the third example. I dont know what this means, but according to my code it seems that the amount of time that the code cuts off gets bigger the larger the input is. Because I added a few digits with the first number, the difference in timing was larger becasue there were more things to calculate through, but when I went down to numbers that were smaller like the second and third example it seems that the change in time that it saves decreases.
 
 ## Source Code
 
