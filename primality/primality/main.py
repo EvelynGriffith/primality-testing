@@ -31,12 +31,10 @@ def human_readable_boolean(answer: bool) -> str:
     # produce a human-readable value for a bool
     # True --> "Yes"
     # False --> "No"
-    if answer != False:
+    if answer is not False:
         return "Yes"
     else:
         return "No"
-    # my linting tools are telling me that this code is incorrect somehow through
-    # flake8 and I dont really understand why because it is functioning well.
 
 
 def pretty_print_list(values: Iterable[int]) -> str:
@@ -63,7 +61,7 @@ def primality_test_exhaustive(x: int) -> Tuple[bool, List[int]]:
             sm_div = guess
             return (False, [0, 1])
             break
-    if sm_div != None:
+    if sm_div is not None:
         return (False, [sm_div])
     else:
         return (True, [1, x])
@@ -91,7 +89,7 @@ def primality_test_efficient(x: int) -> Tuple[bool, List[int]]:
                 smallest_divisor = guess
                 break
     # if the number is not even, then iteratively perform primality test
-    if smallest_divisor != None:
+    if smallest_divisor is not None:
         # make sure that the function returns:
         # --> a bool for whether or not the number was prime
         # --> a List[int] for the list with the smallest divisor for the number
