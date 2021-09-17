@@ -7,7 +7,6 @@ from typing import List
 from typing import Tuple
 
 from enum import Enum
-from pathlib import Path
 
 import typer
 
