@@ -41,8 +41,8 @@ def pretty_print_list(values: Iterable[int]) -> str:
     """Pretty print a list without brackets and adding commas."""
     # create and return a version of the list without brackets
     ls = ""
-    for x in range(Sized(values)):
-        if x == Sized(values) - 1:
+    for x in len(Sized(values)):
+        if x == len(values) - 1:
             ls += f"{values[x]}"
         else:
             ls += f"{values[x]},"
