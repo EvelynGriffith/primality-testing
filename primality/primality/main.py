@@ -17,6 +17,7 @@ from rich.console import Console
 cli = typer.Typer()
 
 # create a Profiler object to support timing program code segments
+  # this is a continuation to the previous comment as a test
 profiler = Profiler()
 
 
