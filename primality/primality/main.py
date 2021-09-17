@@ -85,17 +85,17 @@ def primality_test_efficient(x: int) -> Tuple[bool, List[int]]:
     if x % 2 == 0:
         smallest_divisor = 2
     else:
-    # use a range function that skips over the even values
+        # use a range function that skips over the even values
         for guess in range(3, x, 2):
             if x % guess == 0:
                 smallest_divisor = guess
                 break
     # if the number is not even, then iteratively perform primality test
     if smallest_divisor != None:
-    # make sure that the function returns:
-    # --> a bool for whether or not the number was prime
-    # --> a List[int] for the list with the smallest divisor for the number
-    # --> if the number is prime, return the List[int] with both the number and 1
+        # make sure that the function returns:
+        # --> a bool for whether or not the number was prime
+        # --> a List[int] for the list with the smallest divisor for the number
+        # --> if the number is prime, return the List[int] with both the number and 1
         return (False, [smallest_divisor])
     else:
         return (True, [1, x])
