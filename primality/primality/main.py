@@ -31,6 +31,7 @@ def human_readable_boolean(answer: bool) -> str:
     # produce a human-readable value for a bool
     # True --> "Yes"
     # False --> "No"
+    """note that you should be sure to use is not instead of != in this program!"""
     if answer is not False:
         return "Yes"
     else:
