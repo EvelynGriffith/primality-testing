@@ -41,13 +41,10 @@ def pretty_print_list(values: Iterable[int]) -> str:
     """Pretty print a list without brackets and adding commas."""
     # create and return a version of the list without brackets
     ls = ""
-    for x in range(len(values)):
-        if x == len(values) - 1:
-            ls += f"{values[x]}"
-        else:
-            ls += f"{values[x]},"
+    for x in values:
+            ls += f"{x},"
         # and with commas in between all of the values
-    return ls
+    return ls.rstrip(",")
 
 
 def primality_test_exhaustive(x: int) -> Tuple[bool, List[int]]:
