@@ -31,10 +31,10 @@ def human_readable_boolean(answer: bool) -> str:
     # produce a human-readable value for a bool
     # True --> "Yes"
     # False --> "No"
-    if answer = False:
-        return "No"
-    else:
+    if answer != False:
         return "Yes"
+    else:
+        return "No"
 
 
 def pretty_print_list(values: Iterable[int]) -> str:
