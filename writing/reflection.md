@@ -137,7 +137,9 @@ def primality(
         profiler.print()
 ``` 
 
-TODO: Write at least one paragraph to explain the request source code
+This is essentially the function that calls upon all the other functions in the file. It first takes the variable "number" and defines it as an integer, then it defines the variable "profile" as a boolean, and finally it defines "approach" as None but only through the efficient function. The it uses an if statement to approach a value which the user inputs and tells the computer to approach the value through the efficient function. Then it will start the profiler and call upon the primality_tuple variable which it originally defined as a boolean and a list of integers. Then it will, finally, officially call upon the primality_test_efficient function and ask for the variable "number" which as you may recall it already defined as an integer. Once the primality_test_efficient function completes it's job the profiler will stop, and the function will determine if it needs the futher elif statment from line 27 of the above code.
+If the function determines that the user is trying to approach the number not from an efficient perspective but from an exahustive approach, it will use everything below the elif statement. It will start the profiler then, using the primality_tuple variable it will call upon the primality_test_exhaustive function looking for the variable "number" and once that function has done its job the bigger function will tell the profiler to stop.
+Then the function will move into determining what needs to be printed based on the data it found. If the function determines that the number was prime it will print the yes statement from the bool function if not it will print no. It will also print the number and its smallest divisor if it was not prime.
 
 ### What was the greatest challenge that you faced when completing this assignment?
 
