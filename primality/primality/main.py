@@ -2,7 +2,7 @@
 
 from pyinstrument import Profiler  # type: ignore
 
-from typing import Iterable 
+from typing import Iterable
 from typing import List
 from typing import Tuple
 
