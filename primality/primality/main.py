@@ -17,7 +17,7 @@ from rich.console import Console
 cli = typer.Typer()
 
 # create a Profiler object to support timing program code segments
-profiler = Profiler() 
+profiler = Profiler()
 
 
 class PrimalityTestingApproach(str, Enum):
@@ -38,19 +38,17 @@ def human_readable_boolean(answer: bool) -> str:
         return "Yes"
 
 
-
 def pretty_print_list(values: Iterable[int]) -> str:
     """Pretty print a list without brackets and adding commas."""
     # create and return a version of the list without brackets
     ls = ""
     for x in range(len(values)):
-        if x ==len(values) -1:
+        if x == len(values) - 1:
             ls += f"{values[x]}"
         else:
             ls += f"{values[x]},"
         # and with commas in between all of the values
     return ls
-
 
 
 def primality_test_exhaustive(x: int) -> Tuple[bool, List[int]]:
@@ -60,14 +58,14 @@ def primality_test_exhaustive(x: int) -> Tuple[bool, List[int]]:
     # exhaustively search through all of the values, starting at 2
     # --> if the number is evenly divisible, then it is not prime
     for guess in range(2, x):
-        if x%guess == 0:
+        if x % guess == 0:
             sm_div = guess
-            return (False, [0,1])
+            return (False, [0, 1])
             break
     if sm_div != None:
         return (False, [sm_div])
     else:
-        return (True, [1,x])
+        return (True, [1, x])
     # if smallest_divisor is no longer None then the function has
     # found a non-prime number with a specific smallest_divisor
     # if the smallest_divisor is still None then the function has
@@ -92,9 +90,9 @@ def primality_test_efficient(x: int) -> Tuple[bool, List[int]]:
                 smallest_divisor = guess
                 break
     if smallest_divisor != None:
-        return(False, [smallest_divisor])
+        return (False, [smallest_divisor])
     else:
-        return(True, [1, x])
+        return (True, [1, x])
     # if the number is not even, then iteratively perform primality test
     # use a range function that skips over the even values
     # make sure that the function returns:
