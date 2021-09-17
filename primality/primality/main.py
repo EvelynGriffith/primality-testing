@@ -73,7 +73,6 @@ def primality_test_exhaustive(x: int) -> Tuple[bool, List[int]]:
     # --> a bool for whether or not the number was prime
     # --> a List[int] for the list with the smallest divisor for the number
     # --> if the number is prime, return the List[int] with both the number and 1
-    # This return value is a placeholder
 
 
 def primality_test_efficient(x: int) -> Tuple[bool, List[int]]:
