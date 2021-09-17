@@ -135,7 +135,7 @@ def primality(
             f":microscope: Here's profile data from performing primality testing on {number}!"
         )
         profiler.print()
-``` 
+```
 
 This is essentially the function that calls upon all the other functions in the file. It first takes the variable "number" and defines it as an integer, then it defines the variable "profile" as a boolean, and finally it defines "approach" as None but only through the efficient function. The it uses an if statement to approach a value which the user inputs and tells the computer to approach the value through the efficient function. Then it will start the profiler and call upon the primality_tuple variable which it originally defined as a boolean and a list of integers. Then it will, finally, officially call upon the primality_test_efficient function and ask for the variable "number" which as you may recall it already defined as an integer. Once the primality_test_efficient function completes it's job the profiler will stop, and the function will determine if it needs the futher elif statment from line 27 of the above code.
 If the function determines that the user is trying to approach the number not from an efficient perspective but from an exahustive approach, it will use everything below the elif statement. It will start the profiler then, using the primality_tuple variable it will call upon the primality_test_exhaustive function looking for the variable "number" and once that function has done its job the bigger function will tell the profiler to stop.
@@ -143,8 +143,8 @@ Then the function will move into determining what needs to be printed based on t
 
 ### What was the greatest challenge that you faced when completing this assignment?
 
-TODO: Provide a one-paragraph response that answers this question in your own words.
+The greatest challenge I faced when trying to run this code was that I couldn't figure out why the pyinstrument wouldn't install on my computer. I was getting a lot of weird errors that made me panick and think that I actually did mess something up when we were in SOS week, but Coby came over and helped me figure out that the actual issue was that I already had the package installed and the computer didnt want me to install it again. 
 
 ### Based on your experiences with this project, what is one way in which you want to improve?
 
-TODO: Provide a one-paragraph response that answers this question in your own words.
+I think I said this in a previous lab, but I still get hungup in how to start things and how to be confident enough to try things even if it doesnt seem like they will work. I just need to get better at using the todos to figure out what is being asked of me.
