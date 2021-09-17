@@ -143,7 +143,7 @@ Then the function will move into determining what needs to be printed based on t
 
 ### What was the greatest challenge that you faced when completing this assignment?
 
-The greatest challenge I faced when trying to run this code was that I couldn't figure out why the pyinstrument wouldn't install on my computer. I was getting a lot of weird errors that made me panick and think that I actually did mess something up when we were in SOS week, but Coby came over and helped me figure out that the actual issue was that I already had the package installed and the computer didnt want me to install it again. 
+The greatest challenge I faced when trying to run this code was that I couldn't figure out why the pyinstrument wouldn't install on my computer. I was getting a lot of weird errors that made me panick and think that I actually did mess something up when we were in SOS week, but Coby came over and helped me figure out that the actual issue was that I already had the package installed and the computer didnt want me to install it again.
 
 ### Based on your experiences with this project, what is one way in which you want to improve?
 
