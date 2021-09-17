@@ -42,8 +42,8 @@ def pretty_print_list(values: Iterable[int]) -> str:
     # create and return a version of the list without brackets
     ls = ""
     for x in values:
-            ls += f"{x},"
-        # and with commas in between all of the values
+        ls += f"{x},"
+    # and with commas in between all of the values
     return ls.rstrip(",")
 
 
