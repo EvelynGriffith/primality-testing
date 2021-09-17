@@ -35,6 +35,8 @@ def human_readable_boolean(answer: bool) -> str:
         return "Yes"
     else:
         return "No"
+    # my linting tools are telling me that this code is incorrect somehow through
+    # flake8 and I dont really understand why because it is functioning well.
 
 
 def pretty_print_list(values: Iterable[int]) -> str:
