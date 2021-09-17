@@ -14,6 +14,17 @@
 
 ✨ What divisors were found? 1,103553
 ✨ Was this a prime number? Yes
+
+🔬 Here's profile data from performing primality testing on 103553!
+
+  _     ._   __/__   _ _  _  _ _/_   Recorded: 21:20:55  Samples:  1
+ /_//_/// /_\ / //_// / //_'/ //     Duration: 0.016     CPU time: 0.016
+/   _/                      v4.0.3
+
+Program: primality --number 103553 --approach exhaustive --profile
+
+0.010 primality  primality\main.py:106
+└─ 0.010 primality_test_exhaustive  primality\main.py:55
 ```
 
 `poetry run primality --number 12345678 --approach exhaustive`
@@ -22,6 +33,16 @@
 
 ✨ What divisors were found? 0,1
 ✨ Was this a prime number? No
+
+🔬 Here's profile data from performing primality testing on 12345678!
+
+  _     ._   __/__   _ _  _  _ _/_   Recorded: 21:22:58  Samples:  0
+ /_//_/// /_\ / //_// / //_'/ //     Duration: 0.000     CPU time: 0.000
+/   _/                      v4.0.3
+
+Program: primality --number 12345678 --approach exhaustive --profile
+
+No samples were recorded.
 ```
 
 `poetry run primality --number 49979687 --approach exhaustive`
@@ -31,39 +52,82 @@
 
 ✨ What divisors were found? 1,49979687
 ✨ Was this a prime number? Yes
+
+🔬 Here's profile data from performing primality testing on 49979687!
+
+  _     ._   __/__   _ _  _  _ _/_   Recorded: 21:24:42  Samples:  1
+ /_//_/// /_\ / //_// / //_'/ //     Duration: 4.714     CPU time: 4.719
+/   _/                      v4.0.3
+
+Program: primality --number 49979687 --approach exhaustive --profile
+
+4.711 primality  primality\main.py:106
+└─ 4.711 primality_test_exhaustive  primality\main.py:55
 ```
 
 #### Three outputs from running the efficient algorithm
 
-`poetry run primality --number 49979687 --approach efficient`
+`poetry run primality --number 49979687 --approach efficient --profile`
 
 ```
 😄 Attempting to determine if 49979687 is a prime number!
 
 ✨ What divisors were found? 1,49979687
 ✨ Was this a prime number? Yes
+
+🔬 Here's profile data from performing primality testing on 49979687!
+
+  _     ._   __/__   _ _  _  _ _/_   Recorded: 21:25:58  Samples:  1
+ /_//_/// /_\ / //_// / //_'/ //     Duration: 2.314     CPU time: 2.312
+/   _/                      v4.0.3
+
+Program: primality --number 49979687 --approach efficient --profile
+
+2.305 primality  primality\main.py:106
+└─ 2.305 primality_test_efficient  primality\main.py:81
 ```
 
-`poetry run primality --number 12345678 --approach efficient`
+`poetry run primality --number 12345678 --approach efficient --profile`
 
 ```
 😄 Attempting to determine if 12345678 is a prime number!
 
 ✨ What divisors were found? 2
 ✨ Was this a prime number? No
+
+🔬 Here's profile data from performing primality testing on 12345678!
+
+  _     ._   __/__   _ _  _  _ _/_   Recorded: 21:29:46  Samples:  0
+ /_//_/// /_\ / //_// / //_'/ //     Duration: 0.000     CPU time: 0.000
+/   _/                      v4.0.3
+
+Program: primality --number 12345678 --approach efficient --profile
+
+No samples were recorded.
 ```
 
-`poetry run primality --number 103553 --approach efficient`
+`poetry run primality --number 103553 --approach efficient --profile`
 ```
 😄 Attempting to determine if 103553 is a prime number!
 
 ✨ What divisors were found? 1,103553
 ✨ Was this a prime number? Yes
+
+🔬 Here's profile data from performing primality testing on 103553!
+
+  _     ._   __/__   _ _  _  _ _/_   Recorded: 21:23:44  Samples:  1
+ /_//_/// /_\ / //_// / //_'/ //     Duration: 0.007     CPU time: 0.000
+/   _/                      v4.0.3
+
+Program: primality --number 103553 --approach efficient --profile
+
+0.005 primality  primality\main.py:106
+└─ 0.005 primality_test_efficient  primality\main.py:81
 ```
 
 ## Performance Analysis
 
-The efficiency algorithm is faster by 41% in the example for number 49979687. It is faster by 6% in the second example, and 9% in the third example. I dont know what this means, but according to my code it seems that the amount of time that the code cuts off gets bigger the larger the input is. Because I added a few digits with the first number, the difference in timing was larger becasue there were more things to calculate through, but when I went down to numbers that were smaller like the second and third example it seems that the change in time that it saves decreases.
+The efficiency algorithm is faster by 49% in the example for number 49979687. The other two numbers were so fast to calculate for the computer that both outputs ended up being 0.000. I dont know what this means, but according to my code it seems that the amount of time that the code cuts off gets bigger the larger the input is. Because I added a few digits with the first number, the difference in timing was larger becasue there were more things to calculate through, but when I went down to numbers that were smaller like the second and third example it seems that the change in time that it saves decreases.
 
 ## Source Code
 
