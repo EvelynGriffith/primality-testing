@@ -17,7 +17,6 @@ from rich.console import Console
 cli = typer.Typer()
 
 # create a Profiler object to support timing program code segments
-# this is a continuation to the previous comment as a test
 profiler = Profiler()
 
 
@@ -86,21 +85,20 @@ def primality_test_efficient(x: int) -> Tuple[bool, List[int]]:
     if x % 2 == 0:
         smallest_divisor = 2
     else:
+    # use a range function that skips over the even values
         for guess in range(3, x, 2):
             if x % guess == 0:
                 smallest_divisor = guess
                 break
-    if smallest_divisor != None:
-        return (False, [smallest_divisor])
-    else:
-        return (True, [1, x])
     # if the number is not even, then iteratively perform primality test
-    # use a range function that skips over the even values
+    if smallest_divisor != None:
     # make sure that the function returns:
     # --> a bool for whether or not the number was prime
     # --> a List[int] for the list with the smallest divisor for the number
     # --> if the number is prime, return the List[int] with both the number and 1
-    # This return value is a placeholder
+        return (False, [smallest_divisor])
+    else:
+        return (True, [1, x])
 
 
 @cli.command()
