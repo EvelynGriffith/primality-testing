@@ -8,7 +8,7 @@
 
 #### Three outputs from running the exhaustive algorithm
 
-`poetry run primality --number 103553 --approach exhaustive`
+`poetry run primality --number 103553 --approach exhaustive --profile`
 ```
 😄 Attempting to determine if 103553 is a prime number!
 
@@ -27,7 +27,7 @@ Program: primality --number 103553 --approach exhaustive --profile
 └─ 0.010 primality_test_exhaustive  primality\main.py:55
 ```
 
-`poetry run primality --number 12345678 --approach exhaustive`
+`poetry run primality --number 12345678 --approach exhaustive --profile`
 ```
 😄 Attempting to determine if 12345678 is a prime number!
 
@@ -45,7 +45,7 @@ Program: primality --number 12345678 --approach exhaustive --profile
 No samples were recorded.
 ```
 
-`poetry run primality --number 49979687 --approach exhaustive`
+`poetry run primality --number 49979687 --approach exhaustive --profile`
 
 ```
 😄 Attempting to determine if 49979687 is a prime number!
